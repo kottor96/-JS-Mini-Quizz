@@ -1,3 +1,4 @@
+
 const signButton = document.querySelector("#start");
 const log = document.querySelector("#log");
 var reponse_A
@@ -6,6 +7,7 @@ var reponse_B
 var reponse_C
 var bonnes_reponses
 var point
+var reponse_U
 signButton.addEventListener("click", () => {
     sign = prompt("avant de commancer, appuyer sur f12");
     point = 0
@@ -120,27 +122,34 @@ signButton.addEventListener("click", () => {
         "Ne jamais quitter sa montagne"
     ]
     
-    for (let index = 1; index <= 20; index++) {
-        console.log(questions[index] +" "+index);
-        reponse_U=prompt("repondre A B C")
+    for (let index = 1; index < 20; index++) {
+        i=Math.floor(Math.random() * 20);
+        console.log(index+"> "+questions[i]);
+        console.log(">A  "+reponse_A[i]);
+        console.log(">B  "+reponse_B[i]);
+        console.log(">C  "+reponse_C[i]);
         while (true){
-            if (reponse_U=="A") {
-                reponse_D=reponse_A[index]
+            reponse_U=prompt("Veuillez choisir la reponse A, B ou C :");
+            if (reponse_U==939){
+                prompt.log(bonnes_reponses[i])
+            }
+            else if (reponse_U.toUpperCase=="A") {
+                reponse_D=reponse_A[i]
                 break
             }
             else if (reponse_U=="B") {
-                reponse_D=reponse_B[index]
+                reponse_D=reponse_B[i]
                 break
             }
             else if (reponse_U=="C") {
-                reponse_D=reponse_C[index]
+                reponse_D=reponse_C[i]
                 break
             }
             else{
                 console.log("veuiller donnez une reponse valide");
             }
         }
-        if (bonnes_reponses[index]==reponse_D) {
+        if (bonnes_reponses[i]==reponse_D) {
             console.log("Bonne réponse ! +1 point")
             point++
         }
