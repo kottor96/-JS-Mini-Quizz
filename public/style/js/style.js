@@ -160,8 +160,10 @@ signButton.addEventListener("click", () => {
     }
     if (point<10) {
         console.log("tu as perdu");
+        console.log('tu as '+point+' point')
     }
     else{
-        console.log("tu as gagné");
+        console.log("tu as gagné tu es passer maitre");
+        console.log('tu as '+point+' point')
     }
 });
