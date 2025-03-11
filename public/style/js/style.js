@@ -130,8 +130,8 @@ signButton.addEventListener("click", () => {
         console.log(">C  "+reponse_C[i]);
         while (true){
             reponse_U=prompt("Veuillez choisir la reponse A, B ou C :");
-            if (reponse_U="k"){
-                prompt.log(bonnes_reponses[i])
+            if (reponse_U=="k"){
+                console.log(bonnes_reponses[i])
             }
             else if (reponse_U.toLocaleUpperCase()=="A") {
                 reponse_D=reponse_A[i]
