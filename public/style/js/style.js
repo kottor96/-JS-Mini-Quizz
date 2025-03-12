@@ -8,8 +8,15 @@ var reponse_C
 var bonnes_reponses
 var point
 var reponse_U
+var truc1
+var truc2
+var truc3
+var truc4
+var truc5
+
 signButton.addEventListener("click", () => {
     sign = prompt("avant de commancer, appuyer sur f12");
+    
     point = 0
     questions = [
         "Quel est le mode de vie des nains selon la chanson ?",
@@ -121,10 +128,10 @@ signButton.addEventListener("click", () => {
         "Avec des blagues sur la bière et les elfes",
         "Ne jamais quitter sa montagne"
     ]
-    
-    for (let index = 1; index < 20; index++) {
-        i=Math.floor(Math.random() * 20);
-        console.log(index+"> "+questions[i]);
+    nbr=questions.length
+    for (let index = 0; index < nbr; index++) {
+        let i=Math.floor(Math.random() * questions.length);
+        console.log((index+1)+"> "+questions[i]);
         console.log(">A  "+reponse_A[i]);
         console.log(">B  "+reponse_B[i]);
         console.log(">C  "+reponse_C[i]);
@@ -157,6 +164,11 @@ signButton.addEventListener("click", () => {
         else {
             console.log("Mauvaise réponse !");   
         }
+        questions.splice(i,1)
+        bonnes_reponses.splice(i,1)
+        reponse_A.splice(i,1)
+        reponse_B.splice(i,1)
+        reponse_C.splice(i,1)
     }
     if (point<10) {
         console.log("tu as perdu");
@@ -166,4 +178,5 @@ signButton.addEventListener("click", () => {
         console.log("tu as gagné tu es passer maitre");
         console.log('tu as '+point+' point')
     }
+    
 });
